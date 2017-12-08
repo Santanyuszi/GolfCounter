@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Golf Counter</string>
+    <string name="finish">Reset</string>
+    <string name="golf_score">strokes</string>
+    <string name="player_one">player one</string>
+    <string name="player_two">player two</string>
+    <string name="score_one">0</string>
+    <string name="score_two">0</string>
+    <string name="increase">Tap the number to increase</string>
+    <string name="decrease">Double tap to decrease</string>
+</resources>
