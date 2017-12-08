@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         firstPlayerScore.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
+                if (playerOneStroke >= 1)
                 playerOneStroke = playerOneStroke - 1;
                 displayForPlayerOne(playerOneStroke);
                 firstPlayerScore.startAnimation(animScaleDown);
@@ -83,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         secondPlayerScore.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
+                if (playerOneStroke >= 1)
                 playerTwoStroke = playerTwoStroke - 1;
                 displayForPlayerTwo(playerTwoStroke);
                 secondPlayerScore.startAnimation(animScaleDown);
