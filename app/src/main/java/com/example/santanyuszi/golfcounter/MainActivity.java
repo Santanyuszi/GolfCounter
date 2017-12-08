@@ -4,9 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
 
 public class MainActivity extends AppCompatActivity {
 
+    Animation animScaleUp;
+    Animation animScaleDown;
     int playerOneStroke = 0;
     int playerTwoStroke = 0;
 
@@ -36,14 +41,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        animScaleUp = AnimationUtils.loadAnimation(this,
+                R.anim.anim_scale);
+        animScaleDown = AnimationUtils.loadAnimation(this,
+                R.anim.anim_scale_down);
+
+
+
         firstPlayerScore = (TextView) findViewById(R.id.player_one_stroke);
         secondPlayerScore = (TextView) findViewById(R.id.player_two_stroke);
+
 
         firstPlayerScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 playerOneStroke = playerOneStroke + 1;
                 displayForPlayerOne(playerOneStroke);
+                firstPlayerScore.startAnimation(animScaleUp);
             }
         });
 
@@ -52,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 playerTwoStroke = playerTwoStroke + 1;
                 displayForPlayerTwo(playerTwoStroke);
+                secondPlayerScore.startAnimation(animScaleUp);
             }
         });
 
@@ -60,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onLongClick(View view) {
                 playerOneStroke = playerOneStroke - 1;
                 displayForPlayerOne(playerOneStroke);
+                firstPlayerScore.startAnimation(animScaleDown);
                 return true;
             }
         });
@@ -69,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onLongClick(View view) {
                 playerTwoStroke = playerTwoStroke - 1;
                 displayForPlayerTwo(playerTwoStroke);
+                secondPlayerScore.startAnimation(animScaleDown);
                 return true;
             }
         });
