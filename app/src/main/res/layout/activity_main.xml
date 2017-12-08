@@ -126,7 +126,7 @@
         android:layout_alignParentBottom="true"
         android:background="@android:color/transparent"
         android:fontFamily="sans-serif"
-        android:onClick="resetScore"
+        android:clickable="true"
         android:paddingBottom="@dimen/material_padding_4"
         android:paddingTop="@dimen/material_padding_4"
         android:text="@string/finish"
